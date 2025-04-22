@@ -12,7 +12,7 @@ export default function Home() {
       className="relative min-h-screen bg-center bg-cover flex items-center justify-center"
       style={{ backgroundImage: "url('/background.jpg')" }}
     >
-      {/* Dark overlay */}
+      {/* Dark overlay */} 
       <div className="absolute inset-0 bg-black/30" />
 
       {/* White rounded container */}
