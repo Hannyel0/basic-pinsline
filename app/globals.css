@@ -1,60 +1,33 @@
+/* Import Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
 @import "tailwindcss/preflight";
 @tailwind utilities;
+
+
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
 
 :root {
   --foreground-rgb: 255, 255, 255;
   --background-rgb: 0, 0, 0;
 }
 
-.glass {
-  /* glass background: white at 10% opacity (1A hex = ~10%) */
-  background-color: #ffffff1A;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-
-  /* 1px white border at 20% opacity (33 hex ≈ 20%) */
-  border: 1px solid #ffffff33;
-}
-
-
-
 html {
-  height: 100%;
   background: rgb(var(--background-rgb));
 }
 
 body {
-  height: 100%;
+  color: rgb(var(--foreground-rgb));
   margin: 0;
   padding: 0;
-  color: rgb(var(--foreground-rgb));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom styles for backdrop blur and glass effect */
-.backdrop-blur-sm {
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-/* Smooth transitions */
-* {
-  transition-property: background-color, border-color, color, fill, stroke, opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-/* Container shadow */
-.shadow-2xl {
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-}
