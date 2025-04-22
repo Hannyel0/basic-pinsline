@@ -1,103 +1,131 @@
+// app/page.tsx
 import Image from "next/image";
+import {
+  HomeIcon,
+  CalendarDaysIcon,
+  UserIcon,
+} from "@heroicons/react/24/outline";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main
+      className="relative min-h-screen bg-center bg-cover flex items-center justify-center"
+      style={{ backgroundImage: "url('/background.jpg')" }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/30" />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* White rounded container */}
+      <div className="relative z-10 mx-auto max-w-[1400px] h-[80vh] rounded-[32px] border-4 border-white/20 overflow-hidden flex flex-col">
+        {/* NAV */}
+        <nav className="flex items-center justify-between px-8 py-6">
+          <div className="flex items-center gap-2 text-white text-xl font-bold">
+            {/* Replace with your SVG logo if you have one */}
+            <div className="w-6 h-6 bg-yellow-300 rounded-full" /> 
+            Harmont
+          </div>
+          <ul className="flex items-center gap-8 text-gray-200">
+            <li className="flex items-center gap-1">
+              <span className="text-yellow-300 text-sm">•</span>
+              <a href="#">Locations</a>
+            </li>
+            <li>
+              <a href="#">Rooms</a>
+            </li>
+            <li>
+              <a href="#">Experiences</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+            <li>
+              <button className="bg-yellow-300 text-black px-6 py-2 rounded-full">
+                Book Now
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        {/* HERO COPY */}
+        <div className="flex-1 flex flex-col items-center justify-center text-center px-8">
+          <h1 className="text-[64px] md:text-[96px] lg:text-[120px] font-black tracking-tight leading-[0.95] text-white">
+            Find Your<br />
+            <span className="font-black text-yellow-300">Perfect Space</span>
+          </h1>
+          <p className="mt-4 text-white/90 text-lg md:text-xl max-w-2xl">
+            Discover Handpicked Luxury Cabins In Breathtaking Locations. Unplug,
+            Unwind, And Reconnect With What Matters Most.
+          </p>
+
+          {/* FEATURE TAGS */}
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            {["Self Check‑in", "Wi‑Fi 100 Mbps", "Pet Friendly"].map((label) => (
+              <span
+                key={label}
+                className="glass px-4 py-2 rounded-full text-white inline-flex items-center gap-2"
+              >
+                ♦ {label}
+              </span>
+            ))}
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* FOOTER TEXT + RATING */}
+        <div className="relative px-8 pb-20">
+          <p className="text-center text-white/80">
+            Experience The Perfect Blend Of Comfort And Nature, Crafted For Your
+            Ultimate Escape.
+          </p>
+
+          <div className="absolute bottom-0 right-8 flex flex-col items-end text-white">
+            <span className="text-5xl font-bold">4.9</span>
+            <span className="text-sm opacity-80">from 2,400+ stays</span>
+          </div>
+        </div>
+
+        {/* BOOKING FORM (glass style) */}
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[90%] max-w-[1000px] glass p-4 rounded-full flex items-center justify-between">
+          {/* Room selector */}
+          <div className="flex items-center gap-4">
+            <HomeIcon className="w-6 h-6 text-gray-400" />
+            <div>
+              <div className="text-sm text-gray-400">Room</div>
+              <div className="text-white">Pine Log</div>
+            </div>
+          </div>
+
+          {/* Check‑in */}
+          <div className="flex items-center gap-4">
+            <CalendarDaysIcon className="w-6 h-6 text-gray-400" />
+            <div>
+              <div className="text-sm text-gray-400">Check‑in</div>
+              <div className="text-white">15 Mar 2025</div>
+            </div>
+          </div>
+
+          {/* Check‑out */}
+          <div className="flex items-center gap-4">
+            <CalendarDaysIcon className="w-6 h-6 text-gray-400" />
+            <div>
+              <div className="text-sm text-gray-400">Check‑out</div>
+              <div className="text-white">30 Mar 2025</div>
+            </div>
+          </div>
+
+          {/* Guests */}
+          <div className="flex items-center gap-4">
+            <UserIcon className="w-6 h-6 text-gray-400" />
+            <div>
+              <div className="text-sm text-gray-400">Guests</div>
+              <div className="text-white">4 Adults</div>
+            </div>
+          </div>
+
+          <button className="bg-yellow-300 text-black px-6 py-3 rounded-full font-medium">
+            Book Your Stay
+          </button>
+        </div>
+      </div>
+    </main>
   );
 }
